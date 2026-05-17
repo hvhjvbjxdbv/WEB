@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>爱死机为何改编《万物之道》深度分析</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #0a0f1f; /* 深蓝背景 */
+            color: #ecedee;
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+        .slide {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 3rem 2rem;
+            border-bottom: 1px solid rgba(135, 206, 235, 0.15); /* 浅蓝边框 */
+            position: relative;
+            background: radial-gradient(circle at 20% 30%, rgba(10, 15, 31, 0.7), #050810); /* 深蓝渐变背景 */
+        }
+        .slide::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" opacity="0.03"><path fill="none" stroke="%2300bfff" stroke-width="0.6" d="M10 10 L90 10 M10 20 L90 20 M10 30 L90 30 M10 40 L90 40 M10 50 L90 50 M10 60 L90 60 M10 70 L90 70 M10 80 L90 80 M10 90 L90 90 M10 10 L10 90 M20 10 L20 90 M30 10 L30 90 M40 10 L40 90 M50 10 L50 90 M60 10 L60 90 M70 10 L70 90 M80 10 L80 90 M90 10 L90 90"/></svg>'); /* 亮蓝网格线 */
+            background-repeat: repeat;
+            background-size: 32px;
+            pointer-events: none;
+        }
+        .container {
+            max-width: 1100px;
+            width: 100%;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+        .card {
+            background: rgba(15, 20, 35, 0.85); /* 深蓝卡片背景 */
+            backdrop-filter: blur(6px);
+            border-radius: 2rem;
+            padding: 2.5rem 2.8rem;
+            border: 1px solid rgba(0, 191, 255, 0.35); /* 亮蓝边框 */
+            box-shadow: 0 20px 40px -15px rgba(0,0,0,0.6);
+        }
+        h1 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #87CEEB, #00BFFF); /* 浅蓝到亮蓝渐变文字 */
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+        h2 {
+            font-size: 1.7rem;
+            font-weight: 600;
+            border-left: 5px solid #00BFFF; /* 亮蓝左边框 */
+            padding-left: 1rem;
+            margin: 1.2rem 0 1rem 0;
+            color: #87CEEB; /* 浅蓝标题文字 */
+        }
+        .subhead {
+            font-size: 1.1rem;
+            color: #b0c4de; /* 钢蓝色副标题 */
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+        .highlight {
+            background: linear-gradient(120deg, rgba(0, 191, 255, 0.2), rgba(135, 206, 235, 0.05)); /* 亮蓝渐变高亮背景 */
+            padding: 0.25rem 0.5rem;
+            border-radius: 8px;
+            font-weight: 600;
+            color: #00BFFF; /* 亮蓝高亮文字 */
+        }
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.4rem;
+            margin: 1.5rem 0;
+        }
+        .item {
+            background: rgba(25, 30, 45, 0.7); /* 深蓝卡片项背景 */
+            border-radius: 1.4rem;
+            padding: 1.3rem 1.4rem;
+            border-top: 2px solid #00BFFF; /* 亮蓝顶边 */
+        }
+        .item strong {
+            color: #87CEEB; /* 浅蓝强调文字 */
+            font-size: 1rem;
+        }
+        .item p {
+            color: #d9d5ec;
+            margin-top: 0.4rem;
+            font-size: 0.95rem;
+        }
+        .badge {
+            background: #1a2a3a; /* 深蓝徽章背景 */
+            border-radius: 40px;
+            padding: 0.3rem 1rem;
+            font-size: 0.85rem;
+            font-weight: 500;
+            color: #87CEEB; /* 浅蓝徽章文字 */
+            margin-bottom: 1rem;
+            display: inline-block;
+        }
+        .center {
+            text-align: center;
+        }
+        .quote {
+            font-style: italic;
+            color: #87CEEB; /* 浅蓝引言文字 */
+            border-left: 3px solid #00BFFF; /* 亮蓝左边框 */
+            padding-left: 1rem;
+            margin: 1.2rem 0;
+        }
+        footer {
+            text-align: center;
+            font-size: 0.8rem;
+            opacity: 0.6;
+            margin-top: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+
+<!-- 封面 -->
+<div class="slide">
+    <div class="container">
+        <div class="card center">
+            <span class="badge">🎬 秘密关卡 S1E14 · 爱死机×王者荣耀</span>
+            <h1>爱死机为何改编《万物之道》</h1>
+            <p class="subhead">改编原因 · 关键要素 · 动画扩展 · 副本可行性</p>
+        </div>
+    </div>
+</div>
+
+<!-- 1. 改编原因 -->
+<div class="slide">
+    <div class="container">
+        <div class="card">
+            <h2>🎯 一、爱死机选择改编的核心原因</h2>
+            <div class="grid-2">
+                <div class="item">
+                    <strong>题材与风格高度匹配</strong>
+                    <p>爱死机核心是科幻、AI、宿命与人性对抗。弈星对抗AI神明“万象天工”，将东方哲学与西方科幻融合，创造出全球观众都能理解的全新叙事语言。</p>
+                </div>
+                <div class="item">
+                    <strong>IP影响力与文化独特性</strong>
+                    <p>王者荣耀是全球顶流手游，也是《秘密关卡》唯一中国自研IP，是一次成功的文化输出新范式，兼具辨识度与全球审美。</p>
+                </div>
+                <div class="item">
+                    <strong>故事结构适合短片创作</strong>
+                    <p>聚焦单人成长、单线冲突、高潮明确，10-15分钟可讲完，是爱死机最擅长的叙事形式，也展现了游戏IP巨大的影视化改编潜力。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 2. 决定要素 -->
+<div class="slide">
+    <div class="container">
+        <div class="card">
+            <h2>🔑 二、决定改编的三大关键要素</h2>
+            <div class="grid-2">
+                <div class="item">
+                    <strong>人物设定足够完整</strong>
+                    <p>动画版补充了弈星父母牺牲的身世、复仇动机，人物有弧光、有情感，充分挖掘了游戏IP的叙事潜力。</p>
+                </div>
+                <div class="item">
+                    <strong>世界观极具视觉张力</strong>
+                    <p>古风建筑、机关科技、人工智能融合，画面感强、风格独特，适配爱死机写实硬核画风，是游戏IP视觉潜力的体现。</p>
+                </div>
+                <div class="item">
+                    <strong>戏剧冲突密集且强烈</strong>
+                    <p>以棋局定生死、人命为棋子、以身入局弑神，冲突集中、节奏快、情绪张力大，为跨媒介叙事提供了坚实基础。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 3. 动画扩展 -->
+<div class="slide">
+    <div class="container">
+        <div class="card">
+            <h2>📀 三、动画扩展的核心内容</h2>
+            <div class="grid-2">
+                <div class="item">
+                    <strong>新增“万象天工”AI神明</strong>
+                    <p>设定为控制长安、追求最优解、漠视生命的超级智能，成为故事最大反派，为跨媒介叙事构建了核心冲突。</p>
+                </div>
+                <div class="item">
+                    <strong>新增弈星的完整身世</strong>
+                    <p>明确交代大地震时，万象天工为“最优解”封闭街区，导致弈星父母死亡，成为复仇动机，丰富了角色的情感深度。</p>
+                </div>
+                <div class="item">
+                    <strong>升级故事主题与内核</strong>
+                    <p>从游戏里“下棋赢对手”，升级为反抗宿命、守护苍生、人定胜天的深刻主题，为后续的游戏内容拓展（如副本）埋下伏笔。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 4. 副本可行性 -->
+<div class="slide">
+    <div class="container">
+        <div class="card">
+            <h2>🎮 四、能否设计成游戏支线/副本原型？</h2>
+            <p><span class="highlight">完全可以，而且非常适合。</span></p>
+            <div class="grid-2" style="margin-top:1rem">
+                <div class="item">
+                    <strong>剧情流程完整，天然适合做支线</strong>
+                    <p>探查异常→调查身世→闯入核心→最终棋局BOSS战，完全符合游戏支线任务逻辑，是跨媒介叙事闭环的具体实践。</p>
+                </div>
+                <div class="item">
+                    <strong>玩法与英雄高度匹配</strong>
+                    <p>可设计围棋解谜、躲避精神攻击、棋盘对战，贴合弈星设定，不突兀，能有效提升玩家的沉浸感和代入感。</p>
+                </div>
+                <div class="item">
+                    <strong>能补全王者荣耀世界观</strong>
+                    <p>串联尧天、机关城、未来科技、AI神明，让世界观更完整、更有深度，实现了“游戏-动画-游戏”的叙事闭环。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 小组分工 -->
+<div class="slide">
+    <div class="container">
+        <div class="card">
+            <h2>👥 小组分工</h2>
+            <div class="grid-2">
+                <div class="item">
+                    <strong>罗采韵</strong>
+                    <p>负责PPT整体制作、内容撰写与逻辑梳理，并担任课堂讲解与成果展示。</p>
+                </div>
+                <div class="item">
+                    <strong>李彩欣</strong>
+                    <p>负责PPT页面排版、视觉美化、风格统一，并完成演示文稿整合与细节校对。</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 总结页 -->
+<div class="slide">
+    <div class="container">
+        <div class="card center">
+            <h2>📌 总结</h2>
+            <div style="max-width:85%;margin:1rem auto;text-align:left;font-size:1rem">
+                <p>✔ 改编原因：<span class="highlight">题材契合+文化输出新范式+IP叙事潜力</span></p>
+                <p>✔ 决定要素：<span class="highlight">人设升级+世界观吸睛+冲突密集</span></p>
+                <p>✔ 动画扩展：<span class="highlight">AI神明+角色身世+为跨媒介叙事铺垫</span></p>
+                <p>✔ 副本可行：<span class="highlight">剧情完整+玩法匹配+实现叙事闭环</span></p>
+            </div>
+            <div class="quote">
+                “纵使神明在此，我亦胜它半子”
+            </div>
+            <footer>爱死机×万物之道改编分析</footer>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
